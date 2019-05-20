@@ -3,62 +3,33 @@ var inpuText = document.querySelectorAll('input[type="text"]');
 var myName = document.getElementById('myName');
 $('#result').empty();
 var fname;
-// document.getElementById('result').innerHTML = '<p>Hello <b>' + fname + '</b>' + String.fromCodePoint(0x1F604) + '</p>';
-function say_hi(event) {
-    fname = document.getElementById('enterYourName').value;
-    var inputValue = event.which;
-    if (fname === "") {
-        $('#result').html('Please enter your name');
-        $('#result').css('color', 'red');
-        myName.disabled = true;
-    } else {
-        console.log(fname);
-        $('#result').html(`Hello ${fname}`)
-        $('#result').css('color', 'black');
-        myName.disabled = false;
-        myName.style.backgroundColor = "#4AC1BD";
-        myName.style.backgroundPosition = "left bottom";
-        myName.style.color = "white";
-    }
-}
+
 myName.addEventListener('click', function (e) {
     e.preventDefault();
     document.getElementById('secondDiv').style.display = 'block';
     document.getElementById('firstDiv').style.display = 'none';
 })
 function enableMyName(event) {
-    var inputValue = event.which;
     fname = document.getElementById('enterYourName').value;
     if (isNaN(fname)) {
-        $('#result').html(`Hello ${fname}`)
+        $('#result').html(`Hello ${fname} &#128522;`)
         $('#result').css('color', 'black');
         myName.disabled = false;
         myName.style.backgroundColor = "#4AC1BD";
         myName.style.backgroundPosition = "left bottom";
         myName.style.color = "white";
     } else if (fname === "") {
-
         $('#result').html('Please enter your name');
         $('#result').css('color', '#B94F74');
         myName.disabled = true;
     } else {
-        // event.preventDefault();
-        $('#result').html('Please enter only letter');
+        $('#result').html('Please enter only letters');
         $('#result').css('color', '#B94F74');
         myName.disabled = true;
-        // myName.disabled = false;
-        // myName.style.backgroundColor = "#4AC1BD";
-        // myName.style.backgroundPosition = "left bottom";
-        // myName.style.color = "white";
     }
 }
 
-// inpuText[0].addEventListener('input', say_hi);
 inpuText[0].addEventListener('keyup', enableMyName);
-
-
-
-
 
 // Kopcheto od prviot button da se aktivira
 function enable() {
@@ -100,37 +71,60 @@ function enableA() {
 
 $(".first-checkbox:checkbox").click(function () {
     if ($(".first-checkbox:checked").length > 2) {
+        $('#result2').html('You can only select 2 choices below');
+        $('#result2').css('color', '#B94F74');
         return false;
+    } else if ($(".first-checkbox:checked").length === 0) {
+        $('#result2').html("");
     }
 });
 $(".single-checkbox:checkbox").click(function () {
+    $('#result2').empty();
     if ($(".single-checkbox:checked").length > 2) {
+        $('#result2').html('You can only select 2 choices below');
+        $('#result2').css('color', '#B94F74');
         return false;
+    } else if ($(".single-checkbox:checked").length === 0) {
+        $('#result2').html("");
     }
 });
 $(".third-checkbox:checkbox").click(function () {
+    $('#result2').empty();
     if ($(".third-checkbox:checked").length > 1) {
+        $('#result2').html('You can only select 1 choice below');
+        $('#result2').css('color', '#B94F74');
         return false;
+    } else if ($(".third-checkbox:checked").length === 0) {
+        $('#result2').html("");
     }
 });
 $(".interest-checkbox:checkbox").click(function () {
     if ($(".interest-checkbox:checked").length > 3) {
+        $('#result3').html('You can only select 3 choices below');
+        $('#result3').css('color', '#B94F74');
         return false;
+    } else if ($(".interest-checkbox:checked").length === 0) {
+        $('#result3').html("");
     }
 });
 $(".rela-checkbox:checkbox").click(function () {
     if ($(".rela-checkbox:checked").length > 1) {
+        $('#result4').html('You can only select 1 choice below');
+        $('#result4').css('color', '#B94F74');
         return false;
+    } else if ($(".rela-checkbox:checked").length === 0) {
+        $('#result4').html("");
     }
 });
 $(".health-checkbox:checkbox").click(function () {
     if ($(".health-checkbox:checked").length > 1) {
+        $('#result5').html('You can only select 1 choice below');
+        $('#result5').css('color', '#B94F74');
         return false;
+    } else if ($(".health-checkbox:checked").length === 0) {
+        $('#result5').html("");
     }
 });
-
-
-
 
 document.getElementById('btn7').addEventListener('click', enableA);
 document.getElementById('btn8').addEventListener('click', enableA);
@@ -149,7 +143,6 @@ function enableE() {
         document.getElementById("nameE").style.backgroundPosition = "left bottom";
         document.getElementById("nameE").style.color = "white";
         document.getElementById("nameE").style.backgroundColor = "#4AC1BD";
-
     } else {
         document.getElementById("nameE").disabled = true;
     }
@@ -208,11 +201,14 @@ function enableB() {
     document.getElementById("nameB").style.color = "white";
 }
 document.getElementById('enterYourProffesion').addEventListener('input', enableB);
+
 function enableC() {
     var textArea = document.getElementById('comment').value;
-    if (textArea.length < 5) {
+    if (textArea.length < 15) {
+        $('.please').html('Please write more then 15 letters');
         document.getElementById('nameC').disabled = true;
     } else {
+        $('.please').html("");
         document.getElementById("nameC").disabled = false;
         document.getElementById("nameC").style.backgroundPosition = "left bottom";
         document.getElementById("nameC").style.color = "white";
@@ -224,9 +220,11 @@ document.getElementById('comment').addEventListener('input', enableC);
 
 function enableR() {
     var textArea = document.getElementById('comment22').value
-    if (textArea.length < 5) {
+    if (textArea.length < 15) {
+        $('.please5').html('Please write more then 15 letters');
         document.getElementById('myName10').disabled = true;
     } else {
+        $('.please5').html("");
         document.getElementById("myName10").disabled = false;
         document.getElementById("myName10").style.backgroundPosition = "left bottom";
         document.getElementById("myName10").style.color = "white";
@@ -250,7 +248,6 @@ document.getElementById('btn6a').addEventListener('click', showDiv);
 
 // ---------->
 
-
 var myName2 = document.getElementById('myName2');
 myName2.addEventListener('click', function (e) {
     e.preventDefault();
@@ -261,6 +258,7 @@ myName2.addEventListener('click', function (e) {
 var nameA = document.getElementById('nameA');
 nameA.addEventListener('click', function (e) {
     e.preventDefault();
+    $('#result2').html('');
     document.getElementById('fourthDiv').style.display = 'block';
     document.getElementById('thirdDiv').style.display = 'none';
 })
@@ -282,6 +280,7 @@ nameD.addEventListener('click', function (e) {
 var nameE = document.getElementById('nameE');
 nameE.addEventListener('click', function (e) {
     e.preventDefault();
+    $('#result3').html('');
     document.getElementById('seventhDiv').style.display = 'block';
     document.getElementById('sixthDiv').style.display = 'none';
 })
@@ -304,6 +303,7 @@ myName8.addEventListener('click', function (e) {
 var myName9 = document.getElementById('myName9');
 myName9.addEventListener('click', function (e) {
     e.preventDefault();
+    $('#result4').html('');
     document.getElementById('tenthDiv').style.display = 'block';
     document.getElementById('ninthDiv').style.display = 'none';
 })
@@ -326,6 +326,7 @@ myName11.addEventListener('click', function (e) {
 var nameHealth = document.getElementById('nameHealth');
 nameHealth.addEventListener('click', function (e) {
     e.preventDefault();
+    $('#result5').html('');
     document.getElementById('thirteenDiv').style.display = 'block';
     document.getElementById('twelthDiv').style.display = 'none';
 })
@@ -351,18 +352,17 @@ function enableMyNameB() {
     document.getElementById("myName3").style.backgroundColor = "#4AC1BD";
     document.getElementById("myName3").style.backgroundPosition = "left bottom";
     document.getElementById("myName3").style.color = "white";
-
-
-
 }
 
 // Enable Textarea - health
 
 function enablePlan() {
     let textAreaPlan = document.getElementById('comment3').value;
-    if (textAreaPlan.length < 5) {
+    if (textAreaPlan.length < 15) {
+        $('.please3').html('Please write more then 15 letters');
         document.getElementById('namePlan').disabled = true;
     } else {
+        $('.please3').html("");
         document.getElementById("namePlan").disabled = false;
         document.getElementById("namePlan").style.backgroundColor = "#4AC1BD";
         document.getElementById("namePlan").style.backgroundPosition = "left bottom";
@@ -492,31 +492,20 @@ function sayActivities() {
 document.getElementById('nameActivities').addEventListener('click', sayActivities);
 
 
-function enableF(event) {
+function enableF() {
     var textArea = document.getElementById('comment2').value;
-    if (textArea.length < 5) {
+    if (textArea.length < 15) {
+        $('.please2').html('Please write more then 15 letters');
         document.getElementById("nameF").disabled = true;
     } else {
         document.getElementById("nameF").disabled = false;
         document.getElementById("nameF").style.backgroundColor = "#4AC1BD";
         document.getElementById("nameF").style.backgroundPosition = "left bottom";
         document.getElementById("nameF").style.color = "white";
+        $('.please2').html("");
     }
 }
 document.getElementById('comment2').addEventListener('input', enableF);
-
-function enableC() {
-    let textArea = document.getElementById('comment').value;
-    if (textArea.length < 5) {
-        document.getElementById('nameC').disabled = true;
-    } else {
-        document.getElementById("nameC").disabled = false;
-        document.getElementById("nameC").style.backgroundPosition = "left bottom";
-        document.getElementById("nameC").style.color = "white";
-        document.getElementById("nameC").style.backgroundColor = "#4AC1BD";
-    }
-}
-document.getElementById('comment').addEventListener('input', enableC);
 
 // Return button
 
@@ -600,23 +589,23 @@ function enableQQQ(event) {
     console.log(textAreaQQQ.includes('@'));
     if (textAreaQQQ.includes('@')) {
         document.getElementById('bonus2').disabled = false;
+        document.getElementById("bonus2").style.backgroundPosition = "left bottom";
+        document.getElementById("bonus2").style.color = "white";
+        document.getElementById("bonus2").style.backgroundColor = "#4AC1BD";
     } else {
         document.getElementById("bonus2").disabled = true;
     }
-    document.getElementById("bonus2").style.backgroundPosition = "left bottom";
-    document.getElementById("bonus2").style.color = "white";
-    document.getElementById("bonus2").style.backgroundColor = "#4AC1BD";
 }
 document.getElementById('enterYourEmail').addEventListener('input', enableQQQ);
 
 function ValidateEmail(inputText) {
     var mailformat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (inputText.value.match(mailformat)) {
-        document.form1.email.focus();
         return true;
     }
 }
 document.getElementById("bonus2").addEventListener('click', ValidateEmail(document.form1.email));
+
 
 
 
