@@ -1,16 +1,20 @@
 body {
     background-color: #D5DAFA;
+    background-image: url(../images/firstEx.jpeg);
+    background-size: cover;
+    background-position: 80% 100%;
+    background-repeat: no-repeat;
     font-family: 'Ubuntu', sans-serif;
     overflow-x: hidden;
 }
 
-.header-background {
+/* .header-background {
     width: 100%;
     background-image: url(../images/firstEx.jpeg);
     background-size: cover;
     background-position: 80% 100%;
     background-repeat: no-repeat;
-}
+} */
 
 .headerMain {
     font-size: 6.1rem;
@@ -151,7 +155,7 @@ body {
 }
 
 @media screen and (max-width: 1577px) {
-    .header-background {
+    body {
         background-position: 68% 100%;
     }
     .header-text {
@@ -167,7 +171,7 @@ body {
     .headerMain {
         font-size: 5.1rem;
     }
-    .header-background {
+    body {
         background-position: 68% 100%;
     }
     .headerParagraph {
@@ -179,7 +183,7 @@ body {
     .header-text {
         width: 42%;
     }
-    .header-background {
+    body {
         background-position: 80% 100%;
     }
 }
@@ -194,7 +198,7 @@ body {
     .header-text {
         padding: 168px 100px 138px 0;
     }
-    .header-background {
+    body {
         background-position: 88% 100%;
     }
 }
@@ -227,7 +231,7 @@ body {
     .headerParagraph {
         font-size: 1.5rem;
     }
-    .header-background {
+    body {
         background-position: 55% 100%;
     }
 }
@@ -251,7 +255,7 @@ body {
     .headerMain {
         font-size: 3rem;
     }
-    .header-background {
+    body {
         background-position: 50% 100%;
     }
     .header-text {
@@ -274,7 +278,7 @@ body {
 @media screen and (max-width: 425px) {}
 
 @media screen and (max-width: 320px) {
-    .header-background {
+    body {
         background-position: 49.5% 50%;
     }
     .header-text {
