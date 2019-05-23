@@ -232,12 +232,18 @@ body {
     }
 }
 
+@media screen and (max-width: 766px) {
+    .header-text {
+        margin: 180px 20px 180px 0;
+    }
+}
+
 @media screen and (max-width: 621px) {
     .headerMain {
         font-size: 3.2rem;
     }
     .header-text {
-        margin: 450px 20px 220px 0;
+        margin: 190px 20px 120px 0;
     }
 }
 
@@ -259,13 +265,19 @@ body {
     }
 }
 
-@media screen and (max-width: 426px) {}
+@media screen and (max-width: 560px) {
+    .header-text {
+        margin: 250px 0 70px 0;
+    }
+}
+
+@media screen and (max-width: 425px) {}
 
 @media screen and (max-width: 320px) {
     .header-background {
         background-position: 49.5% 50%;
     }
     .header-text {
-        margin: 600px 20px 61px 0;
+        margin: 258px 20px 51px 0;
     }
 }
