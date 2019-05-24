@@ -599,17 +599,20 @@ function enableQQQ(event) {
 document.getElementById('enterYourEmail2').addEventListener('input', enableQQQ);
 
 var input = $('#enterYourEmail2');
+if (input.value.length === 0) {
+    $('#resultEmail').html("");
+}
+var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+if (!input.value.match(mailformat)) {
+    $('#resultEmail').html("Please enter a validate email");
+}
 function ValidateEmail(input) {
-    $('#resultEmail').hide();
-    var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
     if (input.value.match(mailformat)) {
         return true;
-    } else {
-        $('#resultEmail').show();
-        $('#resultEmail').html("Please enter a validate email");
     }
 }
-$("#bonus2").on('click', ValidateEmail(document.form1.email));
+
+$("#lastForm").on('submit', ValidateEmail(document.form1.email));
 
 // $('#resultEmail').html("Please enter a validate email");
 // $('#resultEmail').css('color', '#B94F74');
